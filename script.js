@@ -574,3 +574,38 @@ function allAccur(char) {
     console.log("yesssssssss",result);
       }
   allword()
+
+
+   // program 25
+  // Write a js program to replace first occurrence of a character with another in a string.
+  
+  function repelace(t,w) {
+    var string='i love my country pakistan'
+    for(let x=0;x<string.length;x++){
+      if (string.charAt(x)==t) {
+        var news=string.replace(t,w)
+        break
+      }
+    }
+    console.log("After Replacing ",t," With ",w," String is:",news);
+  }
+  repelace("i","You")
+
+
+
+  // program 26
+  // Write a js program to replace last occurrence of a character with another in a string.
+  
+  function repelacelast(t,w) {
+    var string='i love my country pakistan'
+    for(let x=string.length-1;x>=0;x--){
+      var aray=string.split("")
+      if (aray[x]==t) {
+          aray[x]=w
+          var news=aray.join("")
+        break
+      }
+    }
+    console.log("After Replacing ",t," With ",w," String is:",news);
+  }
+  repelacelast("i","a")
