@@ -748,3 +748,436 @@ function lasttWord(f) {
        }
   }
   removeLast("Pakistan")
+
+
+  // program 34
+  // Write a js program to remove all occurrence of a word in given string
+  function allOccur(word) {
+    var string='i Love My Country i Pakistan'
+   var array=string.split(" ")
+   var yess=0
+    for(let x=array.length-1;x>=0;x--){
+           if (array[x]==word) {
+             array.splice(x,1)
+             yess++
+            }
+          }
+        var news=array.join(" ")
+          if (yess>0) {
+      console.log("After Removing All",word, "Words:",news); 
+       }
+       else{
+         console.log("Given Word Is Not Found In String");
+       }
+  }allOccur("i")
+
+
+
+  // program 35
+  // Write a js program to trim leading white space characters from given string.
+  function trimSpace() {
+    var string='       I love my country pakistan'
+    var array=string.split(" ")
+    for(let x=0;x<array.length;x++){
+      if (array[x]=="") {
+        array.shift()  
+        x--    
+      }
+      
+    }
+    var news=array.join(" ")
+    console.log("After Removing Leading space:",news);
+    
+  }
+  trimSpace()
+
+
+   // program 36
+  // Write a js program to trim trailing white space characters from given string.
+  function trailingSpace() {
+    var string='       I love my country pakistan      '
+    var array=string.split(" ")
+    for(let x=0;x<array.length;x++){
+      if (array[array.length-1]=="") {
+        array.pop()     
+      }
+      
+    }
+    var news=array.join(" ")
+    console.log("After Removing Trailing space:",news);
+    
+  }
+  trailingSpace()
+
+
+  // program 37
+  // Write a js program to trim both leading and trailing white space characters from given string.
+  function trimBoth() {
+    var string='    I love my country pakistan      '
+    var news=string.trim()
+    console.log("After Removing Leading And Trailing White Space:",news);
+    
+  }
+  trimBoth()
+
+
+  //  program 38
+  // Write a js program to remove all extra blank spaces from given string.
+  function extraSpace() {
+    var string='    I love Pakistan   is my country   '
+    var news=string.trim()
+    var array=news.split(" ")
+    for(let x=0;x<array.length;x++){
+  
+      if (array[x]=="") {
+        array.splice(x,1)
+        x--
+      }
+    }
+    var result=array.join(" ")
+    console.log("After Removing All Extra White Space:",result);
+    
+  }
+  extraSpace()
+
+
+
+  // object 
+  
+
+  // program 39
+  // Write a JavaScript program to list the properties of a JavaScript object
+  // var student = {
+  // name : "David Rayy",
+  // sclass : "VI",
+  // rollno : 12 };
+  // Sample Output: name,sclass,rollno
+  
+  function properties() {
+    var student={
+      name:"David Rayy",
+      sclass:"VI",
+      rollno:12,
+    };
+    var news=Object.keys(student).join(",")
+    console.log("Output",news);
+    
+  }
+  properties()
+
+
+
+  // program 40
+  // Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property.
+  // Sample object:
+  // var student = {
+  // name : "David Rayy",
+  // sclass : "VI",
+  // rollno : 12 };
+  
+  function deleteobj() {
+    var student={
+      name:"David Rayy",
+      sclass:"VI",
+      rollno:12,
+    };
+    console.log("Before Deletion",student);
+    delete student.rollno
+    console.log("After Deletion",student);
+    
+  }
+  deleteobj()
+
+
+  // program 41
+  // Write a JavaScript program to get the length of a JavaScript object.   
+  // Sample object :
+  // var student = {
+  // name : "David Rayy",
+  // sclass : "VI",
+  // rollno : 12 };
+  
+  function lengthobj() {
+    var student = {
+      name : "David Rayy",
+      sclass : "VI",
+      rollno : 12 };
+      var key=Object.keys(student)
+      console.log("length Of object Is:",key.length);
+  }
+  lengthobj()
+
+
+
+  // program 42
+  // Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.   
+  // var library = [ 
+  //    {
+  //        author: 'Bill Gates',
+  //        title: 'The Road Ahead',
+  //        readingStatus: true
+  //    },
+  //    {
+  //        author: 'Steve Jobs',
+  //        title: 'Walter Isaacson',
+  //        readingStatus: true
+  //    },
+  //    {
+  //        author: 'Suzanne Collins',
+  //        title:  'Mockingjay: The Final Book of The Hunger Games', 
+  //        readingStatus: false
+  //    }];
+  
+  function displayobj() {
+    var library = [ 
+         {
+             author: 'Bill Gates',
+             title: 'The Road Ahead',
+             readingStatus: true
+         },
+         {
+             author: 'Steve Jobs',
+             title: 'Walter Isaacson',
+             readingStatus: true
+         },
+         {
+             author: 'Suzanne Collins',
+             title:  'Mockingjay: The Final Book of The Hunger Games', 
+             readingStatus: false
+         }];
+  
+         for(let x=0;x<library.length;x++){
+           console.log(library[x].readingStatus);
+         }
+    
+  }
+  displayobj()
+
+
+   // program 43
+  // Write a JavaScript program to get the volume of a Cylinder with four decimal places using object classes.   
+  // Volume of a cylinder : V = πr2h
+  // where r is the radius and h is the height of the cylinder.
+  
+  function volum(h,r) {
+    var volume,result
+    volume=Math.PI*2*r*h
+    result=volume.toFixed(4)
+    console.log("Volume Of cylinder is:",result);
+  }
+  volum(5,6)
+
+
+  // program 44
+  // Write a Bubble Sort algorithm in JavaScript. 
+  
+  function bubleSort() {
+    var array=[6,4,0,67,-3,-2,1]
+     for(let x=0;x<array.length;x++){
+      for(let y=x+1;y<array.length;y++){
+        if (array[y]<array[x]) {
+          var sample=array[x]
+          array[x]=array[y]
+          array[y]=sample
+        }
+      }
+     }
+  console.log(array);
+  }
+  bubleSort()
+
+
+
+  // program 45
+// Write a JavaScript program which returns a subset of a string.   
+// Sample Data: dog
+// Expected Output: ["d", "do", "dog", "o", "og", "g"]
+
+function subset() {
+    var string='Dogs'
+    var array=[]
+    for(let x=0;x<string.length;x++){
+      for(let y=x+1;y<=string.length;y++){
+          array.push(string.slice(x,y))
+        }
+      }
+      console.log("Subset Of Given String Is:",array);
+  }
+  subset()
+
+
+
+  // program 47
+  // Write a JavaScript program to calculate the area and perimeter of a circle.   
+  // Note : Create two methods to calculate the area and perimeter. The radius of the circle will be supplied by the user.
+  
+  function Areapara(r) {
+    var area=Math.PI*r*r
+    var para=Math.PI*2*r
+    console.log("Parimeter Of Circle:",para.toFixed(5));
+    console.log("Area Of Circle:",area.toFixed(5))
+    
+  }
+  Areapara(10)
+
+
+
+
+   // program 48
+  // Write a JavaScript function to print all the methods in an JavaScript object.
+  
+  function objectname(any) {
+    return Object.getOwnPropertyNames(any)
+    
+  }
+  console.log(objectname(Array));
+
+
+
+  // program 49
+  // Write a JavaScript function to retrieve all the values of an object's properties.
+  function allValue() {
+    var object1={
+      name:'Usama',
+      fatherName:'Azam',
+      class:'BsCs',
+      rollno:11931,
+    }
+    console.log(Object.values(object1));
+  }
+  allValue()
+
+
+   // program 49
+  // Write a JavaScript function to retrieve all the values of an object's properties.
+  function allValue() {
+    var object1={
+      name:'Usama',
+      fatherName:'Azam',
+      class:'BsCs',
+      rollno:11931,
+    }
+    console.log(Object.values(object1));
+  }
+  allValue()
+
+
+
+  // program 50
+  // Write a JavaScript function to check whether an object contains given property. 
+  function property(obj) {
+    student={
+      sName:'M.Usama',
+      sFatherName:'M.Azam',
+      class:"BsCs",
+      section:"Evening",
+      rollno:"11931"
+    }
+    if (student.hasOwnProperty(obj)) {
+      console.log("Student Object Has This Property");
+    }
+    else{
+     console.log("Student Object Has Not This Property");
+ 
+    }
+ 
+  }
+  property('class')
+
+
+
+   //                            Conditional Operator
+  
+  // program 1
+  // Write a js program to find maximum between two numbers using conditional operator
+  function greaterC_O() {
+    var num1=12
+  var num2=22
+  var greater=num1>num2 ? num1+" Is Greater" : num2+" Is Greater"
+  console.log(greater);
+  }
+  greaterC_O()
+  
+  
+  // program 2
+  // Write a js program to find maximum between three numbers using conditional operator.
+  function greater3C_O(){
+    var num1=20
+    var num2=19
+    var num3=21
+     var number1=num1>num2?num2>num3? num1+" is greater":num3+" is greater":num2+" is greater"
+     console.log(number1);
+  }
+  greater3C_O()
+
+
+
+  // program 3
+  // Write a js program to check whether a number is even or odd using conditional operator.
+  function checkC_O() {
+    var num1=45
+    var chek=num1%2==0?num1+" is even":num1+" is odd"
+    console.log(chek);
+  }
+  checkC_O()
+
+
+
+   // program 4
+  // Write a js program to check whether year is leap year or not using conditional operator.
+  function leapYear() {
+    var num1=11
+    var chek=num1%4==0?num1+" is leap year":num1+" is not a leap year"
+    console.log(chek);
+  }
+  leapYear()
+
+
+
+   // program 5
+// Write a js program to check whether character is an alphabet or not using conditional operator.
+
+function character() {
+  
+    var char=1
+    var check=char>='a'|| char>='A'?char+" is a Character":char+" Is Not A Character"
+    console.log(check);
+    }
+    character()
+
+
+
+     //                          Switch Statement
+    
+    // program 1
+    // Write a js program to print day of week name using switch case
+    function dayOfWeek(x) {
+        switch (x) {
+          case 1:
+             console.log("Sunday");
+            break;
+          case 2:
+             console.log("Monday");
+            break;
+          case 3:
+             console.log("Tuseday");
+            break;
+          case 4:
+             console.log("Wednesday");
+            break;
+          case 5:
+             console.log("Thursday");
+            break;
+          case 6:
+             console.log("Friday");
+            break;
+          case 7:
+             console.log("Saturday");
+            break;
+        
+          default:
+            console.log("Enter Valid Day Number");
+            break;
+        }
+      }
+      dayOfWeek(6)
